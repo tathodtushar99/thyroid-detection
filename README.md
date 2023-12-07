@@ -30,10 +30,7 @@ The objective is to develop a classification methodology for predicting the type
 ## Model Training and Metrics
 - Trained classification models using the balanced dataset.
 - Evaluated model performance using relevant metrics:
-  - Accuracy: XX%
-  - Precision: XX%
-  - Recall: XX%
-  - F1-score: XX%
+  - Accuracy: 88.07%
 
 ### Model Training (Continued)
 - Split the dataset into training and testing sets (80-20 split).
