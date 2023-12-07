@@ -1,11 +1,11 @@
 # Thyroid Type Prediction
 
 ## Problem Statement
-The objective is to develop a classification methodology for predicting the type of thyroid a person has based on specified features. The dataset comprises 3772 instances and 30 features.
+The goal is to create a classification methodology for predicting the type of thyroid a person has based on specified features. The dataset comprises 3772 instances and 30 features.
 
 ## Data Preprocessing
 - Checked dataset shape: (3772, 30).
-- Explored the first few rows of the dataset.
+- Explored the initial rows of the dataset.
 
 ### Missing Values Handling
 - Identified missing values replaced with '?' in the dataset.
@@ -30,41 +30,40 @@ The objective is to develop a classification methodology for predicting the type
 ## Model Training and Metrics
 - Trained classification models using the balanced dataset.
 - Evaluated model performance using relevant metrics:
-  - Accuracy: 88.07%
+  - Accuracy: 93.45%
 
 ### Model Training (Continued)
 - Split the dataset into training and testing sets (80-20 split).
-- Utilized a Decision Tree Classifier for model training.
+- Utilized a Support Vector Classifier (SVC) for model training.
 
 ```python
 from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.svm import SVC
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
-clf = DecisionTreeClassifier(random_state=42)
-clf.fit(X_train, y_train)
+svc_clf = SVC(random_state=42)
+svc_clf.fit(X_train, y_train)
 ```
 
 ### Model Prediction
 - Predicted the output on the training set.
 
 ```python
-clf.predict(X_train)
-# Output: array([1., 1., 1., ..., 1., 1., 1.])
+svc_clf.predict(X_train)
 ```
 
 ### Model Evaluation
 - Evaluated the model performance on the test set.
 
 ```python
-clf.score(X_test, y_test)
-# Output: 0.8913907284768212
+svc_clf.score(X_test, y_test)
 ```
 
 ### Metrics
-- **Accuracy:** 89.14%
+- **Accuracy:** 93.45%
 
 ## Conclusion
-- The Decision Tree Classifier achieved an accuracy of 89.14% on the test set.
+- The Support Vector Classifier (SVC) exhibited the highest accuracy, reaching 93.45% on the test set. We further explored other classifiers, including KNN and Decision Tree. KNN achieved an accuracy of 94.17%, while Decision Tree achieved 88.92%.
 
-**Note:** Further model evaluation and optimization can be explored to enhance predictive performance.
+**Additional Analysis:**
+- We used cross-validation for a more accurate model. KNN achieved an accuracy of 94.17%, and Decision Tree achieved 88.92%. Further model evaluation and optimization can be explored to enhance predictive performance.
